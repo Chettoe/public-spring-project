@@ -1,0 +1,1 @@
+alter table betreuer add column git_hub_name text;

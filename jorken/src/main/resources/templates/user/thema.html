@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${thema.name()}"></h1>
+
+    <p th:text="${thema.markdown()}"></p>
+
+    <h2>Vorraussetzungen</h2>
+    <ul>
+        <li  th:each="req : ${thema.requirements()}"
+             th:text="${req}">
+
+        </li>
+    </ul>
+
+    <h3>Links:</h3>
+    <ul>
+        <li th:each="e : ${thema.links()}">
+            <a th:href="${e}"
+               th:text="${e}"
+               target="_blank"
+               rel="noopener noreferrer"></a>
+        </li>
+    </ul>
+
+    <a th:href="@{/jorken/result_betreuer/{fachId}(fachId=${betreuer.id})}">Zum Betreuer</a>
+</body>
+</html>

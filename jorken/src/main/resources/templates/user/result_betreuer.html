@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Ergebniss:</h1>
+<ul>
+    <li th:each="betreuer : ${res_betreuer}">
+        <a th:href="@{/jorken/result_betreuer/{fachId}(fachId=${betreuer.id})}">Zum Profil</a>
+        <p>
+            <span th:text="${betreuer.firstName}"></span>
+            <span th:text="${betreuer.lastName}"></span>
+            <span th:text="${betreuer.gitHubName}"></span>
+        </p>
+    </li>
+</ul>
+
+<br>
+
+<a th:href="@{/jorken}">Zurück</a>
+
+</body>
+</html>

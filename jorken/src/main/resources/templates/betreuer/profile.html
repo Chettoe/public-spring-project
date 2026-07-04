@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Hallo
+        <span th:text="${betreuer.firstName}"></span>
+        <span th:text="${betreuer.lastName}"></span>
+    </h1>
+
+    <h2>Deine Beschreibung:
+        <span th:text="${betreuer.beschreibung}"></span>
+    </h2>
+
+    <a th:href="@{/jorken/betreuer/edit_profile}">Profil bearbeiten</a>
+
+    <h3>Deine Themen:</h3>
+    <ul>
+        <li th:each="thema : ${betreuer.themen}">
+            <a th:href="@{/jorken/betreuer/edit_thema/{fachId}(fachId=${thema.fachId})}"
+               th:text="${thema.name}">Thema Name</a>
+        </li>
+    </ul>
+
+    <a th:href="@{/jorken/betreuer/create_thema}">Neues Thema hinzufügen</a>
+
+    <h4>Links:</h4>
+    <ul>
+        <li th:each="e : ${betreuer.links}">
+            <a th:href="${e}"
+               th:text="${e}"
+               target="_blank"
+               rel="noopener noreferrer"></a>
+        </li>
+    </ul>
+
+
+
+</body>
+</html>

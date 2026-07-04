@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Admin Page</h1>
+
+    <form action="" method="post">
+        <label for="firstNameID">First Name</label>
+        <br>
+        <input type="text" id="firstNameID" name="firstName" required>
+        <br>
+        <label for="lastNameID">Last Name</label>
+        <br>
+        <input type="text" id="lastNameID" name="lastName" required>
+        <br>
+        <label for="emailID">Email</label>
+        <br>
+        <input type="email" id="emailID" name="email" required>
+        <br>
+        <label for="phoneNumberID">Phonenumber</label>
+        <br>
+        <input type="text" id="phoneNumberID" name="phoneNumber">
+        <br>
+        <label for="gitHubNameID">Github Username</label>
+        <br>
+        <input type="text" id="gitHubNameID" name="gitHubName" required>
+        <br>
+        <br>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <button type="submit">Betreuer Hinzufügen</button>
+    </form>
+    <br>
+    <a th:href="@{/jorken/admin}">Zurück</a>
+</body>
+</html>

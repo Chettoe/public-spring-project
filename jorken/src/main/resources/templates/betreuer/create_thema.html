@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Thema erstellen</h1>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        <label for="nameID">Name</label>
+        <br>
+        <input type="text" id="nameID" name="name" required>
+        <br>
+        <label for="requirementsID">Vorraussetzungen</label>
+        <br>
+        <input type="text" id="requirementsID" name="requirements">
+        <p>(Vorraussetzungen bitte durch '#' trennen)</p>
+        <label for="linksID">Links</label>
+        <br>
+        <input type="text" id="linksID" name="links">
+        <p>(Links bitte durch ',' trennen)</p>
+        <label for="markdownID">Markdown</label>
+        <br>
+        <input type="file" id="markdownID" name="markdown">
+        <br>
+        <br>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <button>Erstellen</button>
+    </form>
+
+    <br>
+
+    <a th:href="@{/jorken/betreuer/profile}">Zurück</a>
+</body>
+</html>

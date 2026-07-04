@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+</head>
+<body>
+
+<h1>Profil bearbeiten</h1>
+
+<form action="" method="post">
+    <label for="emailID">Email</label>
+    <br>
+    <input type="email" id="emailID" name="email" th:value="${betreuer.email}" required>
+    <br>
+    <label for="phoneNumberID">Telefonnummer</label>
+    <br>
+    <input type="text" id="phoneNumberID" name="phoneNumber" th:value="${betreuer.phoneNumber}">
+    <br>
+    <label for="beschreibungID">Beschreibung</label>
+    <br>
+    <input id="beschreibungID" name="beschreibung" th:value="${betreuer.beschreibung}">
+    <br>
+    <label for="tagsID">Tags</label>
+    <br>
+    <input id="tagsID" name="tags" th:value="${tags}">
+    <p>Tags bitte getrennt durch '#' angeben</p>
+    <br>
+    <label for="linksID">Links</label>
+    <br>
+    <input id="linksID" name="links" th:value="${links}">
+    <p>Links bitte getrennt durch ein ',' angeben</p>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <button type="submit">Update</button>
+</form>
+
+<br>
+
+<a th:href="@{/jorken/betreuer/profile}">Zurück</a>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Suche nach Themen Tags oder Betreuern</h1>
+<form th:action="@{/jorken}" method="POST">
+    <label for="betreuerID">Betreuer</label>
+    <input type="radio" id="betreuerID" name="filter" value="betreuer" required>
+    <br>
+    <label for="themenID">Themen</label>
+    <input type="radio" id="themenID" name="filter" value="themen">
+    <br>
+    <label for="sucheID">Suche</label>
+    <input type="search" id="sucheID" name="search" required>
+    <button type="submit">Suchen</button>
+
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<a th:href="@{/jorken/betreuer}">Mein Betreuer Profil</a>
+
+</body>
+</html>

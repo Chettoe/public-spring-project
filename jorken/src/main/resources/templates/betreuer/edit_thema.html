@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Thema bearbeiten</h1>
+
+<form th:action="@{/jorken/betreuer/edit_thema}" method="post" enctype="multipart/form-data">
+    <label for="nameID">Name</label>
+    <br>
+    <input type="text" id="nameID" name="name" th:value="${thema.name()}" required>
+    <br>
+    <label for="requirementsID">Vorraussetzungen</label>
+    <br>
+    <input type="text" id="requirementsID" name="requirements" th:value="${req}">
+    <p>(Vorraussetzungen bitte durch '#' trennen)</p>
+    <label for="linksID">Links</label>
+    <br>
+    <input type="text" id="linksID" name="links" th:value="${links}">
+    <p>(Links bitte durch ',' trennen)</p>
+    <p th:text="${thema.markdown()}"></p>
+    <label for="markdownID">Markdown</label>
+    <br>
+    <input type="file" id="markdownID" name="markdown">
+    <br>
+    <br>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <input type="hidden" name="fachId" th:value="${thema.fachId()}"/>
+    <button>Bearbeiten</button>
+</form>
+
+<br>
+
+<a th:href="@{/jorken/betreuer/profile}">Zurück</a>
+</body>
+</html>

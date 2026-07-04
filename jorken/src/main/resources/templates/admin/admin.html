@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <a th:href="@{/jorken/admin/add}">Neuen Betreuer Hinzufügen</a>
+
+    <br>
+    <br>
+
+    <table>
+        <thead>
+        <tr>
+            <td>Vorname</td>
+            <td>Nachname</td>
+            <td>Email</td>
+            <td>Telefonnummer</td>
+            <td>Github Name</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="e : ${betreuer}">
+            <td><span th:text="${e.firstName}"></span></td>
+            <td><span th:text="${e.lastName}"></span></td>
+            <td><span th:text="${e.getEmail()}"></span></td>
+            <td><span th:text="${e.getPhoneNumber()}"></span></td>
+            <td><span th:text="${e.gitHubName}"></span></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Profil:</h1>
+    <h2>
+        <span th:text="${betreuer.firstName}"></span>
+        <span th:text="${betreuer.lastName}"></span>
+    </h2>
+
+    <h3>Beschreibung</h3>
+    <p th:text="${betreuer.beschreibung}"></p>
+
+    Email: <p th:text="${betreuer.email}"></p>
+    Telefonnummer: <p th:text="${betreuer.phoneNumber}"></p>
+
+    <h4>Themen</h4>
+    <ul>
+        <li th:each="t : ${betreuer.getThemen()}">
+            <a th:href="@{/jorken/result_themen/{fachId}(fachId=${t.fachId})}" th:text="${t.name()}"></a>
+        </li>
+    </ul>
+
+    <h5>Links:</h5>
+    <ul>
+        <li th:each="e : ${betreuer.links}">
+            <a th:href="${e}"
+               th:text="${e}"
+               target="_blank"
+               rel="noopener noreferrer"></a>
+        </li>
+    </ul>
+</body>
+</html>

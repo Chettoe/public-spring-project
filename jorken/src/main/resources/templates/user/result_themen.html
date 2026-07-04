@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Ergebniss:</h1>
+<ul>
+    <li th:each="thema : ${res_themen}">
+        <a th:href="@{/jorken/result_themen/{fachId}(fachId=${thema.fachId})}">Zum Thema</a>
+        <p>
+            <span th:text="${thema.name}"></span>
+        </p>
+    </li>
+</ul>
+
+<br>
+
+<a th:href="@{/jorken}">Zurück</a>
+
+</body>
+</html>
